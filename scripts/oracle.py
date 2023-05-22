@@ -23,6 +23,7 @@ class PaddingOracle(object):
     def query(self, cipher) -> bool:
         target = TARGET + urlencode({"er": cipher})
 
+        print(f"requesting {target}")
         resp = urllib3.request("GET", target)
         # print("resp -> ", resp.__dict__)
 
